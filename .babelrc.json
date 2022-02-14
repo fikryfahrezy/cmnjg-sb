@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "react-app",
+      {
+        "absoluteRuntime": false
+      }
+    ],
+    [
+		"@babel/preset-typescript",
+		{
+			"allExtensions": true,
+			"isTSX": true
+		}
+	]
+  ]
+}
