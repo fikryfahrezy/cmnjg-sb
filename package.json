@@ -1,7 +1,6 @@
 {
   "name": "cmnjg-sb",
   "version": "0.1.1",
-  "private": true,
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "scripts": {
     "start": "react-scripts start",
@@ -12,6 +11,9 @@
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier --write ."
   },
+  "files": [
+	  "dist"
+  ],
   "eslintConfig": {
     "extends": [
       "react-app",
