@@ -1,3 +1,17 @@
+# v0.1.2 (Tue Feb 15 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Fix CI ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Add CI ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- First publish ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.1 (Mon Feb 14 2022)
 
 #### ⚠️ Pushed to `master`
