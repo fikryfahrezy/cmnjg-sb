@@ -3,9 +3,16 @@
   "author": "fikryfahrezy",
   "version": "0.1.2",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.cjs"
+  },
   "scripts": {
     "start": "react-scripts start",
-    "build": "cross-env BABEL_ENV=production babel src -d dist --delete-dir-on-start --extensions .ts,.tsx --config-file ./.babelrc.json",
+    "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
@@ -46,12 +53,10 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "web-vitals": "^2.1.4"
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.17.0",
-    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
     "@storybook/addon-essentials": "^6.4.19",
@@ -72,10 +77,15 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "auto": "^10.32.6",
-    "react-scripts": "5.0.0",
     "cross-env": "^7.0.3",
     "prettier": "^2.5.1",
+    "react-scripts": "5.0.0",
+    "rollup": "^2.67.2",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }

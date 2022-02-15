@@ -1,5 +1,1 @@
-import reportWebVitals from "./reportWebVitals";
-
-export * from "./helloworld";
-
-reportWebVitals();
+export { default as HelloWorld } from "./helloworld";
