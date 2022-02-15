@@ -30,4 +30,4 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm run release
+          npm run release ${{ secrets.GIT_EMAIL }}
