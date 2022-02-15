@@ -1,3 +1,15 @@
+# v0.1.5 (Tue Feb 15 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Fix CD ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.4 (Tue Feb 15 2022)
 
 #### ⚠️ Pushed to `main`
