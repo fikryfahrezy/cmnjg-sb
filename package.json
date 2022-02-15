@@ -1,7 +1,7 @@
 {
   "name": "cmnjg-sb",
   "author": "fikryfahrezy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "scripts": {
     "start": "react-scripts start",
@@ -11,10 +11,10 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier --write .",
-	"release": "auto shipit --base-branch=main --email"
+    "release": "auto shipit --base-branch=main --email"
   },
   "files": [
-	  "dist"
+    "dist"
   ],
   "eslintConfig": {
     "extends": [
