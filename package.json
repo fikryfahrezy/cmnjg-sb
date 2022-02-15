@@ -19,7 +19,7 @@
     "build-storybook": "build-storybook -s public",
     "prettier": "prettier --write .",
     "release": "auto shipit --base-branch=main --email",
-    "chromatic": "chromatic --project-token="
+    "chromatic": "chromatic --project-token=afc618189f91"
   },
   "files": [
     "dist"
