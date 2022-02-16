@@ -15,11 +15,10 @@
     "build": "rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript && tsc",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
     "prettier": "prettier --write .",
-    "release": "auto shipit --base-branch=main --email",
-    "chromatic": "chromatic --project-token=afc618189f91"
+    "release": "auto shipit --base-branch=main --email"
   },
   "files": [
     "dist"
