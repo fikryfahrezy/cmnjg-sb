@@ -1,3 +1,16 @@
+# v0.1.6 (Wed Feb 16 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Fix CI/CD ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Test CD ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.5 (Tue Feb 15 2022)
 
 #### ⚠️ Pushed to `main`
