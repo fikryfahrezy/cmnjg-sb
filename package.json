@@ -1,7 +1,7 @@
 {
   "name": "cmnjg-sb",
   "author": "fikryfahrezy",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
