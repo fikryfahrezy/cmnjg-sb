@@ -3,7 +3,7 @@ import React, { useRef, useEffect } from "react";
 import { useTable } from "react-table";
 import styles from "./index.module.css";
 
-export type ExampleTableProps = {
+export type TableProps = {
   data: {}[];
   columns: ({ isSticky?: boolean } & Column<{}>)[];
   colMw?: number;
@@ -12,13 +12,13 @@ export type ExampleTableProps = {
   HTMLTableElement
 >;
 
-export default function ExampleTable({
+const Table = ({
   data,
   colMw,
   className,
   columns: layoutColumns,
   ...properties
-}: ExampleTableProps) {
+}: TableProps) => {
   const theadRef = useRef<HTMLTableSectionElement>(null);
   const tbodyRef = useRef<HTMLTableSectionElement>(null);
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
@@ -81,7 +81,7 @@ export default function ExampleTable({
      * - Loop the first split and the second from begining till the end
      * --- Calculate the previous columns width
      * --- Save the the each calculations to each index of an array
-     * 		with flag if it's come from first split or last split
+     * 		with flag represent it's come from first split or last split
      * --- if the column should to be sticky add the index of column to another array
      *
      * - Get the rest of the rows
@@ -103,19 +103,18 @@ export default function ExampleTable({
       const prevWidthCalcs: {
         isLeft: boolean;
         isShadow: boolean;
+        minWidth: number;
+        maxWidth: number;
         widthTotal: number;
+        widthStickyTotal: number;
       }[] = [];
       const stickyFlags: number[] = [];
 
       let widthTotal = 0;
+      let widthStickyTotal = 0;
       let firstHalfSticky = false;
       for (let i = 0; i < halfLength; i++) {
-        if (i !== 0) {
-          const column = firstRows[i - 1].getBoundingClientRect();
-          widthTotal += column.width;
-        }
-
-        const isSticky = layoutColumns[i].isSticky;
+        const { isSticky, minWidth, maxWidth } = layoutColumns[i];
         firstHalfSticky = isSticky === true;
         if (
           i < firstRowsLen &&
@@ -125,43 +124,65 @@ export default function ExampleTable({
           firstHalfSticky = false;
         }
 
+        const isShouldCalc = i !== 0;
+        if (isShouldCalc) {
+          const lastColW = firstRows[i - 1].getBoundingClientRect().width;
+          widthTotal += lastColW;
+        }
+
+        let currColW = 0;
+        if (isSticky) {
+          currColW = firstRows[i].getBoundingClientRect().width;
+          widthStickyTotal += currColW;
+
+          stickyFlags.push(i);
+        }
+
         prevWidthCalcs.push({
           widthTotal,
           isLeft: true,
+          widthStickyTotal: isShouldCalc ? widthStickyTotal - currColW : 0,
+          minWidth: minWidth ?? 0,
+          maxWidth: maxWidth ?? 0,
           isShadow: isSticky === true && firstHalfSticky,
         });
-
-        if (isSticky) {
-          stickyFlags.push(i);
-        }
       }
 
       const currPWCLen = prevWidthCalcs.length;
       const currSFLen = stickyFlags.length;
 
       widthTotal = 0;
-      let halfResSticky = false;
+      widthStickyTotal = 0;
+      firstHalfSticky = false;
       for (let i = firstRowsLen - 1; i >= halfLength; i--) {
-        if (i !== firstRowsLen - 1) {
+        const { isSticky, minWidth, maxWidth } = layoutColumns[i];
+        firstHalfSticky = isSticky === true;
+        if (i > 0 && i > halfLength && layoutColumns[i - 1].isSticky === true) {
+          firstHalfSticky = false;
+        }
+
+        const isShouldCalc = i !== firstRowsLen - 1;
+        if (isShouldCalc) {
           const column = firstRows[i - 1].getBoundingClientRect();
           widthTotal += column.width;
         }
 
-        const isSticky = layoutColumns[i].isSticky;
-        halfResSticky = isSticky === true;
-        if (i > 0 && i > halfLength && layoutColumns[i - 1].isSticky === true) {
-          halfResSticky = false;
+        let currColW = 0;
+        if (isSticky) {
+          currColW = firstRows[i].getBoundingClientRect().width;
+          widthStickyTotal += currColW;
+
+          stickyFlags.splice(currSFLen, 0, i);
         }
 
         prevWidthCalcs.splice(currPWCLen, 0, {
           widthTotal,
+          widthStickyTotal: isShouldCalc ? widthStickyTotal - currColW : 0,
           isLeft: false,
-          isShadow: isSticky === true && halfResSticky,
+          minWidth: minWidth ?? 0,
+          maxWidth: maxWidth ?? 0,
+          isShadow: isSticky === true && firstHalfSticky,
         });
-
-        if (isSticky) {
-          stickyFlags.splice(currSFLen, 0, i);
-        }
       }
 
       const stickyFlagsLen = stickyFlags.length;
@@ -169,26 +190,35 @@ export default function ExampleTable({
         const columns = rows[i].children;
         for (let j = 0; j < stickyFlagsLen; j++) {
           const colIdx = stickyFlags[j];
-          const { isLeft, widthTotal, isShadow } = prevWidthCalcs[colIdx];
+          const { isLeft, isShadow, maxWidth, minWidth, widthStickyTotal } =
+            prevWidthCalcs[colIdx];
           const col = columns[colIdx] as HTMLElement;
           const colWidth = columns[colIdx].clientWidth;
 
+          col.style.width = `${colWidth}px`;
+          col.style.minWidth = `${minWidth > 0 ? minWidth : colWidth}px`;
+          col.style.position = "sticky";
+          const isHead = col.tagName === "TH";
+          col.style.zIndex = isHead ? "99" : "2";
+
+          if (maxWidth > 0) {
+            col.style.maxWidth = `${maxWidth}px`;
+          }
+
           if (isLeft) {
-            col.style.left = `${widthTotal}px`;
+            col.style.left = `${widthStickyTotal}px`;
             if (isShadow) {
               col.classList.add(styles.shadowRight);
             }
           } else {
-            col.style.right = `${widthTotal}px`;
+            col.style.right = `${widthStickyTotal}px`;
+            col.style.zIndex = isHead
+              ? `${99 + (stickyFlagsLen - j)}`
+              : `${stickyFlagsLen - j + 1}`;
             if (isShadow) {
               col.classList.add(styles.shadowLeft);
             }
           }
-
-          col.style.width = `${colWidth}px`;
-          col.style.minWidth = `${colWidth}px`;
-          col.style.position = "sticky";
-          col.style.zIndex = "2";
         }
       }
     };
@@ -214,9 +244,29 @@ export default function ExampleTable({
         <thead ref={theadRef}>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column, i) => {
-                return <th key={column.id}>{column.render("Header")}</th>;
-              })}
+              {headerGroup.headers.map(
+                ({ id, maxWidth, minWidth, render }, _) => {
+                  return (
+                    <th
+                      key={id}
+                      style={{
+                        maxWidth: maxWidth
+                          ? maxWidth < 9e15
+                            ? maxWidth
+                            : "none"
+                          : "none",
+                        minWidth: minWidth
+                          ? minWidth > 0
+                            ? minWidth
+                            : "auto"
+                          : "auto",
+                      }}
+                    >
+                      {render("Header")}
+                    </th>
+                  );
+                },
+              )}
             </tr>
           ))}
         </thead>
@@ -225,10 +275,25 @@ export default function ExampleTable({
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
-                {row.cells.map((cell, i) => {
+                {row.cells.map(({ column, getCellProps, render }, _) => {
+                  const { maxWidth, minWidth } = column;
                   return (
-                    <td {...cell.getCellProps()} style={{}}>
-                      {cell.render("Cell")}
+                    <td
+                      {...getCellProps()}
+                      style={{
+                        maxWidth: maxWidth
+                          ? maxWidth < 9e15
+                            ? maxWidth
+                            : "none"
+                          : "none",
+                        minWidth: minWidth
+                          ? minWidth > 0
+                            ? minWidth
+                            : "auto"
+                          : "auto",
+                      }}
+                    >
+                      {render("Cell")}
                     </td>
                   );
                 })}
@@ -239,4 +304,6 @@ export default function ExampleTable({
       </table>
     </div>
   );
-}
+};
+
+export default Table;

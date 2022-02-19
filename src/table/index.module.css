@@ -1,20 +1,33 @@
 .tableWrapper {
   width: 100%;
   overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #f2f2f2 transparent;
+}
+
+.tableWrapper::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+}
+
+.tableWrapper::-webkit-scrollbar-thumb {
+  background: #f2f2f2;
 }
 
 .table {
   border-collapse: collapse;
 }
 
-.table thead tr {
+.table thead tr,
+.table tbody tr {
   --th-font-size: 14px;
   height: 50px;
 }
 
 .table thead tr th {
-  position: relative;
-  padding: calc(var(--th-font-size) - 5px) 0;
+  position: sticky;
+  top: 0;
   color: #fff;
   background-color: #2a6877;
   font-size: var(--th-font-size);
@@ -34,7 +47,14 @@
 
 .table tbody tr td {
   background-color: #fff;
+  box-shadow: inset 0px -2px 0px #f2f2f2;
 }
+
+.table thead tr th,
+.table tbody tr td {
+  padding: calc(var(--th-font-size) - 5px) 25px;
+}
+
 .table thead tr th,
 .table tbody tr td {
   min-width: 100px;
