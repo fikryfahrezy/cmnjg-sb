@@ -1,3 +1,15 @@
+# v0.1.9 (Sat Feb 19 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Add LoginPage and Sidebar component ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.8 (Sat Feb 19 2022)
 
 #### ⚠️ Pushed to `main`
