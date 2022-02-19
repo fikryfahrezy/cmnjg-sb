@@ -1,17 +1,40 @@
 /* eslint-disable */
-const rollupTypescript = require("@rollup/plugin-typescript");
+/**
+ * Ref:
+ * https://stackoverflow.com/a/61786669/12976234
+ * https://www.mixmax.com/engineering/rollup-externals
+ * https://florian.ec/blog/rollup-scss-css-modules/
+ */
+import rollupTypescript from "@rollup/plugin-typescript";
+import babel from '@rollup/plugin-babel';
+import { terser } from "rollup-plugin-terser";
+import autoprefixer from "autoprefixer";
+import postcss from "rollup-plugin-postcss";
+import pkg from "./package.json";
 
 export default {
   input: "src/index.tsx",
   output: [
     {
-      file: "dist/index.cjs",
-      format: "cjs",
-    },
-    {
-      file: "dist/index.mjs",
-      format: "es",
-    },
+      format: 'es',
+      dir: 'dist',
+      preserveModules: true,
+      preserveModulesRoot: 'src'
+    }
   ],
-  plugins: [rollupTypescript()],
+  external: [...Object.keys(pkg.dependencies || {})],
+  plugins: [
+    rollupTypescript(),
+	babel({
+		babelHelpers: "bundled",
+		exclude: 'node_modules/**'
+	}),
+    postcss({
+      plugins: [autoprefixer()],
+      sourceMap: true,
+	  modules: true,
+      minimize: true,
+    }),
+    terser(),
+  ],
 };

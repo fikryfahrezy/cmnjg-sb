@@ -3,12 +3,11 @@
   "author": "fikryfahrezy",
   "version": "0.1.6",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
-  "main": "dist/index.cjs",
-  "module": "dist/index.mjs",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
-    "import": "./dist/index.mjs",
-    "require": "./dist/index.cjs"
+    "import": "./dist/index.js"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -53,9 +52,10 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-table": "^7.7.0"
   },
   "devDependencies": {
+    "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-typescript": "^8.3.0",
     "@storybook/addon-a11y": "^6.4.19",
     "@storybook/addon-actions": "^6.4.19",
@@ -76,17 +76,18 @@
     "@types/node": "^16.11.24",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
+    "@types/react-table": "^7.7.9",
     "auto": "^10.32.6",
+    "autoprefixer": "^10.4.2",
     "chromatic": "^6.4.3",
     "cross-env": "^7.0.3",
     "prettier": "^2.5.1",
+    "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "rollup": "^2.67.2",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.5.5",
     "webpack": "^5.68.0"
-  },
-  "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
   }
 }

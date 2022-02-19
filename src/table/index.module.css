@@ -1,0 +1,78 @@
+.tableWrapper {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.table {
+  border-collapse: collapse;
+}
+
+.table thead tr {
+  --th-font-size: 14px;
+  height: 50px;
+}
+
+.table thead tr th {
+  position: relative;
+  padding: calc(var(--th-font-size) - 5px) 0;
+  color: #fff;
+  background-color: #2a6877;
+  font-size: var(--th-font-size);
+}
+
+.table thead tr th:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 2px;
+  height: calc(16px + 5px);
+  background-color: #fff;
+  transform: translateY(-50%);
+  transition: background-color 0.3s;
+}
+
+.table tbody tr td {
+  background-color: #fff;
+}
+.table thead tr th,
+.table tbody tr td {
+  min-width: 100px;
+}
+
+.activeScrollShadowRight,
+.activeScrollShadowLeft,
+.shadowRight,
+.shadowLeft {
+}
+
+.shadowLeft::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  top: 0;
+  bottom: -1px;
+  left: 0;
+  transform: translate(-100%);
+  transition: box-shadow 0.3s;
+  pointer-events: none;
+}
+
+.activeScrollShadowLeft .shadowLeft::before {
+  box-shadow: inset -10px 0 8px -8px #00000026;
+}
+.shadowRight::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  top: 0;
+  right: 0;
+  bottom: -1px;
+  transform: translate(100%);
+  transition: box-shadow 0.3s;
+  pointer-events: none;
+}
+
+.activeScrollShadowRight .shadowRight::after {
+  box-shadow: inset 10px 0 8px -8px #00000026;
+}
