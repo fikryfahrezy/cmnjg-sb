@@ -11,19 +11,18 @@ import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
 import svgr from "@svgr/rollup";
 import autoprefixer from "autoprefixer";
+import image from "@rollup/plugin-image";
 import pkg from "./package.json";
 
 export default {
   input: "src/index.tsx",
-  output: [
-    {
-      format: "es",
-      dir: "dist",
-      preserveModules: true,
-      preserveModulesRoot: "src",
-    },
-  ],
-  external: [...Object.keys(pkg.dependencies || {})],
+  output: {
+    format: "es",
+    dir: "dist",
+    preserveModules: true,
+    preserveModulesRoot: "src",
+  },
+  external: [...Object.keys(pkg.peerDependencies || {}), "react-icons/ri"],
   plugins: [
     rollupTypescript(),
     babel({
@@ -36,6 +35,7 @@ export default {
       modules: true,
       minimize: true,
     }),
+    image(),
     terser(),
     svgr(),
   ],
