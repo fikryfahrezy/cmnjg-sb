@@ -16,7 +16,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:parcel:exp": "parcel build",
-    "build:rollup": "rollup --config rollup.config.ts",
+    "build": "rollup --config rollup.config.ts",
     "dev": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "prettier": "prettier --write .",
