@@ -1,3 +1,18 @@
+# v0.1.10 (Sun Jul 03 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Add git email to workflows ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Update npm script ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- fix: github workflow ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Test ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.9 (Sat Feb 19 2022)
 
 #### ⚠️ Pushed to `main`
