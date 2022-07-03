@@ -43,17 +43,20 @@
   },
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "peerDependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
     "@chakra-ui/system": "^2.0.0",
     "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0"
+    "@emotion/styled": "^11.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@chakra-ui/system": "^2.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
     "@mdx-js/react": "^2.1.2",
     "@parcel/packager-ts": "^2.6.2",
     "@parcel/transformer-typescript-types": "^2.6.2",
@@ -89,6 +92,8 @@
     "cross-env": "^7.0.3",
     "parcel": "^2.6.2",
     "prettier": "^2.7.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "react-scripts": "^5.0.1",
     "rollup": "2.67.2",
     "rollup-plugin-postcss": "4.0.2",
