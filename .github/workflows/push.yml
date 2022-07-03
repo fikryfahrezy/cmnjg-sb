@@ -44,7 +44,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           #👇 npm token, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/distribute/ to obtain it
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          GH_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
           npm ci
           npm run build
-          npm run release
+          npm run release $GIT_EMAIL

@@ -22,7 +22,11 @@ export default {
     preserveModules: true,
     preserveModulesRoot: "src",
   },
-  external: [...Object.keys(pkg.peerDependencies || {}), "react-icons/ri"],
+  external: [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+    "react-icons/ri",
+  ],
   plugins: [
     rollupTypescript(),
     babel({
