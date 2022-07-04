@@ -1,3 +1,5 @@
+export type { LinkTreeProps } from "./aside/linktree";
+
 export { default as Alert } from "./alert";
 export { default as Aside } from "./aside";
 export { default as Avatar } from "./avatar";
@@ -20,3 +22,4 @@ export { default as Popup } from "./popup";
 export { default as Select } from "./select";
 export { default as Textarea } from "./textarea";
 export { default as Toast } from "./toast";
+export { useToast } from "./toast";
