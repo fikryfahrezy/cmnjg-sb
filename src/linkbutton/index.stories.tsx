@@ -12,4 +12,6 @@ const Template: ComponentStory<typeof LinkButton> = (args) => {
 };
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  children: "Link Button",
+};

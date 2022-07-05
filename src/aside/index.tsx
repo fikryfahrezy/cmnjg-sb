@@ -7,6 +7,8 @@ import IconButton from "../iconbutton";
 import LinkTree from "./linktree";
 import styles from "./Styles.module.css";
 
+export type { LinkTreeProps } from "./linktree";
+
 type AsideProps = HTMLAttributes<HTMLElement> & {
   linkList: LinkTreeProps[];
 };
