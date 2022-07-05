@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 import {
   RiErrorWarningFill,
   RiInformationFill,
@@ -7,7 +7,7 @@ import {
 import styles from "./Styles.module.css";
 
 export type AlertProps = JSX.IntrinsicElements["div"] & {
-  status: "error" | "success" | "warning" | "info";
+  status: "error" | "success" | "warning" | "info" | undefined;
   withIcon: boolean;
   render?: () => JSX.Element | null;
 };

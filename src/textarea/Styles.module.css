@@ -1,3 +1,9 @@
+.errorMsg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #ff7474;
+}
+
 .textarea {
   display: block;
   width: 100%;

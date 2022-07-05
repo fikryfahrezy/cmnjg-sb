@@ -24,6 +24,7 @@ const globPlugins = [
     sourceMap: true,
     modules: true,
     minimize: true,
+    extract: true,
   }),
   image(),
   terser(),

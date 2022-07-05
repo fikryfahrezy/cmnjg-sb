@@ -12,4 +12,6 @@ const Template: ComponentStory<typeof Label> = (args) => {
 };
 
 export const Example = Template.bind({});
-Example.args = {};
+Example.args = {
+  children: "Label",
+};

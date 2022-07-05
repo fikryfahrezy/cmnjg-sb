@@ -8,6 +8,7 @@ type InputFileProps = JSX.IntrinsicElements["input"] & {
   label?: string;
   note?: string;
   isInvalid?: boolean;
+  errMsg?: string;
 };
 
 const InputFile = (
@@ -19,6 +20,7 @@ const InputFile = (
     children,
     onChange,
     disabled,
+    errMsg,
     src = "",
     value = "",
     label = "",
@@ -26,7 +28,7 @@ const InputFile = (
     isInvalid = false,
     ...restProps
   }: InputFileProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   const srcs = src.split(", ");
   const [filesName, setFilesName] = useState("");
@@ -77,6 +79,7 @@ const InputFile = (
       ) : (
         <></>
       )}
+      {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
       <div
         style={style}
         className={`${styles.inputContainer} ${
@@ -133,7 +136,7 @@ const InputFile = (
               }
             }}
             onChange={onFileChange}
-			data-testid="input-file-field-comp"
+            data-testid="input-file-field-comp"
           />
         </span>
       </div>

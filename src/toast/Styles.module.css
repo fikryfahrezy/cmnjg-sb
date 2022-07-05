@@ -2,14 +2,14 @@
   position: fixed;
   display: flex;
   width: 100%;
-  max-width: 500px;
-  left: 50%;
-  right: 0;
-  bottom: 0;
+  bottom: 10px;
   justify-content: center;
   align-items: center;
-  transform: translate(-50%, -25%);
+  flex-direction: column;
+  grid-gap: 1ch;
+  gap: 1ch;
   z-index: 999;
+  pointer-events: none;
 }
 
 .alertContainer,
@@ -23,6 +23,7 @@
   margin-right: 10px;
   margin-left: 10px;
   border-radius: 5px;
+  pointer-events: auto;
 }
 
 .alertBody {

@@ -7,6 +7,7 @@ type InputProps = JSX.IntrinsicElements["input"] & {
   label?: string;
   note?: string;
   isInvalid?: boolean;
+  errMsg?: string;
 };
 
 const Input = (
@@ -16,12 +17,13 @@ const Input = (
     required,
     readOnly,
     type,
+    errMsg,
     isInvalid = false,
     label = "",
     note = "",
     ...restProps
   }: InputProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => (
   <>
     {label && type !== "hidden" ? (
@@ -31,6 +33,7 @@ const Input = (
     ) : (
       <></>
     )}
+    {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
     <input
       {...restProps}
       ref={ref}

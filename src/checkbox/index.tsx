@@ -7,6 +7,7 @@ type CheckboxProps = JSX.IntrinsicElements["input"] & {
   colorScheme?: "red" | "green" | "yellow";
   icon?: JSX.Element;
   isInvalid?: boolean;
+  errMsg?: string;
 };
 /**
  * Ref:
@@ -21,9 +22,10 @@ const Checkbox = (
     children,
     type,
     className,
+    errMsg,
     ...restProps
   }: CheckboxProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   const scheme = (() => {
     let schemeClass = styles.greenScheme;
@@ -45,6 +47,7 @@ const Checkbox = (
 
   return (
     <>
+      {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
       <label htmlFor={id} className={styles.container}>
         <input
           {...restProps}

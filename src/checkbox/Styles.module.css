@@ -1,3 +1,9 @@
+.errorMsg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #ff7474;
+}
+
 .container {
   display: inline-flex;
   align-items: center;

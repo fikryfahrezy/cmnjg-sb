@@ -6,6 +6,7 @@ import styles from "./Styles.module.css";
 type SelectProps = JSX.IntrinsicElements["select"] & {
   label?: string;
   isInvalid?: boolean;
+  errMsg?: string;
 };
 
 const Select = (
@@ -16,11 +17,12 @@ const Select = (
     required,
     id,
     disabled,
+    errMsg,
     isInvalid = false,
     label = "",
     ...restProps
   }: SelectProps,
-  ref: ForwardedRef<HTMLSelectElement>
+  ref: ForwardedRef<HTMLSelectElement>,
 ) => (
   <>
     {label ? (
@@ -37,6 +39,7 @@ const Select = (
     ) : (
       <></>
     )}
+    {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
     <div
       style={style}
       className={`${styles.selectContainer} ${

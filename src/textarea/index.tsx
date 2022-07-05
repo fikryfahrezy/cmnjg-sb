@@ -8,6 +8,7 @@ type TextAreaProps = JSX.IntrinsicElements["textarea"] & {
   note?: string;
   isInvalid?: boolean;
   type?: string;
+  errMsg?: string;
 };
 const TextArea = (
   {
@@ -15,6 +16,7 @@ const TextArea = (
     className,
     required,
     readOnly,
+    errMsg,
     isInvalid = false,
     type = "",
     label = "",
@@ -31,6 +33,7 @@ const TextArea = (
     ) : (
       <></>
     )}
+    {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
     <textarea
       {...restProps}
       ref={ref}

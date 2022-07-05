@@ -4,6 +4,12 @@
   margin-bottom: 10px;
 }
 
+.errorMsg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #ff7474;
+}
+
 .label,
 .label * {
   box-sizing: border-box;
