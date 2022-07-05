@@ -20,6 +20,7 @@ type ToastProps = {
 
 export type UseToastReturn = {
   toast: (param: ToastFnParam) => number;
+  updateToast: (toastId: number, options: ToastFnParam) => number;
   props: ToastProps;
 };
 
@@ -152,6 +153,8 @@ export const useToast: () => UseToastReturn = () => {
         toasts: newToast,
       };
     });
+
+    return toastId;
   };
 
   return { toast, updateToast, props: { ...state } };
