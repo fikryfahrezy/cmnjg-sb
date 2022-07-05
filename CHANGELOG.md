@@ -1,3 +1,15 @@
+# v0.1.12 (Tue Jul 05 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Change css build setting ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.11 (Mon Jul 04 2022)
 
 #### ⚠️ Pushed to `main`
