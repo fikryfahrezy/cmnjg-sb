@@ -1,3 +1,15 @@
+# v0.1.15 (Tue Jul 05 2022)
+
+#### ⚠️ Pushed to `main`
+
+- Update toast type ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.14 (Tue Jul 05 2022)
 
 #### ⚠️ Pushed to `main`
