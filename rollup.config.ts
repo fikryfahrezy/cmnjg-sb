@@ -24,10 +24,7 @@ const globPlugins = [
     sourceMap: true,
     modules: true,
     minimize: true,
-    // extract: true,
-    inject: {
-      insertAt: "top",
-    },
+    extract: true,
   }),
   image(),
   terser(),
