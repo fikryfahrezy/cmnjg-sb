@@ -1,3 +1,15 @@
+# v0.1.18 (Tue Jul 12 2022)
+
+#### ⚠️ Pushed to `main`
+
+- build: Fix github workflows script ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.17 (Tue Jul 12 2022)
 
 #### ⚠️ Pushed to `main`
