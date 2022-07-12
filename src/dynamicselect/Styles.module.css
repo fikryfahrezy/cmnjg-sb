@@ -7,6 +7,12 @@
   box-sizing: border-box;
 }
 
+.errorMsg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #ff7474;
+}
+
 .selectContainer {
   display: flex;
   margin-bottom: 10px;

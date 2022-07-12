@@ -1,10 +1,12 @@
 import type { ForwardedRef } from "react";
 import React, { forwardRef } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
+import Label from "../label";
 import styles from "./Styles.module.css";
 
 type SelectProps = JSX.IntrinsicElements["select"] & {
   label?: string;
+  note?: string;
   isInvalid?: boolean;
   errMsg?: string;
 };
@@ -19,6 +21,7 @@ const Select = (
     disabled,
     errMsg,
     isInvalid = false,
+    note = "",
     label = "",
     ...restProps
   }: SelectProps,
@@ -26,16 +29,9 @@ const Select = (
 ) => (
   <>
     {label ? (
-      <>
-        {required && !disabled ? (
-          <span style={{ color: "#ff0000" }}>*</span>
-        ) : (
-          <></>
-        )}
-        <label className={styles.label} htmlFor={id}>
-          {label}
-        </label>
-      </>
+      <Label disabled={disabled} required={required} note={note} htmlFor={id}>
+        {label}
+      </Label>
     ) : (
       <></>
     )}

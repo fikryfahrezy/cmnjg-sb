@@ -5,7 +5,7 @@ import type {
   HTMLAttributes,
   FormEvent,
 } from "react";
-import React, { useState, useRef, useEffect, forwardRef } from "react";
+import React, { useState, useRef, useEffect, forwardRef, memo } from "react";
 import { RiAddLine, RiCloseLine } from "react-icons/ri";
 import IconButton from "../iconbutton";
 import Label from "../label";
@@ -21,7 +21,7 @@ type DynamicSelectProps = HTMLAttributes<HTMLElement> & {
   onFieldChange?: (
     currentValue: string,
     prevValue: string,
-    e: ChangeEvent<HTMLSelectElement>
+    e: ChangeEvent<HTMLSelectElement>,
   ) => void;
   onFieldDelete?: (deletedVal: string) => void;
   selects: SelectProp[];
@@ -29,6 +29,7 @@ type DynamicSelectProps = HTMLAttributes<HTMLElement> & {
   isInvalid?: boolean;
   disabled?: boolean;
   required?: boolean;
+  errMsg?: string;
 };
 
 const DynamicSelect = (
@@ -40,13 +41,14 @@ const DynamicSelect = (
     selects,
     required,
     onChange,
+    errMsg,
     disabled = false,
     isInvalid = false,
     defaultValue = "",
     onFieldDelete = () => {},
     ...restProps
   }: DynamicSelectProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   const [selection, setSelection] = useState<SelectProp[]>([]);
   const [value, setValue] = useState("");
@@ -179,7 +181,12 @@ const DynamicSelect = (
 
   return (
     <div className={styles.contentContainer}>
-      {label && <Label>{label}</Label>}
+      {label && (
+        <Label disabled={disabled} required={required}>
+          {label}
+        </Label>
+      )}
+      {errMsg ? <p className={styles.errorMsg}>{errMsg}</p> : <></>}
       {selection.map(({ key, defaultValue }, i) => (
         <div className={styles.selectContainer} key={key}>
           <Select
@@ -236,4 +243,6 @@ const DynamicSelect = (
   );
 };
 
-export default forwardRef(DynamicSelect);
+export default memo(forwardRef(DynamicSelect), (prevValue, nextProps) => {
+  return prevValue.selects === nextProps.selects;
+});
