@@ -1,3 +1,15 @@
+# v0.1.16 (Tue Jul 12 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix: Select and Dynamicselect component ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.15 (Tue Jul 05 2022)
 
 #### ⚠️ Pushed to `main`
