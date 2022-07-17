@@ -67,7 +67,7 @@ const DynamicSelect = (
     setValue(newValue);
     setSelection((prevState) => [
       ...prevState,
-      { key: ++prevSelectionKey.current, value: "" },
+      { key: ++prevSelectionKey.current, value: "", defaultValue: "" },
     ]);
   };
 
