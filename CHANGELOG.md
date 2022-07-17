@@ -1,3 +1,15 @@
+# v0.1.19 (Sun Jul 17 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix: defaultValue on dynamicselect ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.18 (Tue Jul 12 2022)
 
 #### ⚠️ Pushed to `main`
