@@ -135,7 +135,7 @@ const AvatarPicker = (
       <img
         src={imgUrl ? imgUrl : defaultSrc}
         className={styles.img}
-        alt="profile"
+        alt="Avatar Picker"
       />
     </div>
   );
