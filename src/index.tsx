@@ -23,3 +23,4 @@ export { default as Select } from "./select";
 export { default as Textarea } from "./textarea";
 export { default as Toast } from "./toast";
 export { useToast } from "./toast";
+export { default as ImagePicker } from "./imagepicker";
