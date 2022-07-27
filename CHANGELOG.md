@@ -1,3 +1,15 @@
+# v0.1.20 (Wed Jul 27 2022)
+
+#### ⚠️ Pushed to `main`
+
+- feat: Add ImagePicker component ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.19 (Sun Jul 17 2022)
 
 #### ⚠️ Pushed to `main`
