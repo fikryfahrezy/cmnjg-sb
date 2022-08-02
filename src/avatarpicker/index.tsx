@@ -1,12 +1,22 @@
 import type { ChangeEvent, ForwardedRef } from "react";
-import React, { forwardRef, useState, useRef, useEffect, cloneElement } from "react";
+import React, {
+  forwardRef,
+  useState,
+  useRef,
+  useEffect,
+} from "react";
 import Button from "../button";
 import { RiFileEditLine, RiCloseLine } from "react-icons/ri";
 import styles from "./Styles.module.css";
 
+export const errNotImageFile = "Some File is Not Image File";
+
+const defaultFunc = () => {};
+
 type AvatarPickerProps = JSX.IntrinsicElements["input"] & {
   defaultSrc: string;
   text: string;
+  onErr?: (message: string) => void;
 };
 
 const AvatarPicker = (
@@ -19,9 +29,10 @@ const AvatarPicker = (
     value,
     src = "",
     text = "",
+    onErr = defaultFunc,
     ...restProps
   }: AvatarPickerProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgUrl, setImgUrl] = useState(src);
@@ -58,13 +69,17 @@ const AvatarPicker = (
       return;
     }
 
-    if (files.length !== 0) {
-      const file = files[0];
-      if (validFileType(file)) {
-        setSelectedFile(file);
-      }
+    if (files.length === 0) {
+      onErr(errNotImageFile);
     }
 
+    const file = files[0];
+    if (!validFileType(file)) {
+      onErr(errNotImageFile);
+      return;
+    }
+
+    setSelectedFile(file);
     if (typeof onChange === "function") {
       onChange(e);
     }
@@ -98,7 +113,7 @@ const AvatarPicker = (
         <input
           {...restProps}
           type="file"
-          accept=".jpg, .jpeg, .png"
+          accept="image/*"
           disabled={disabled}
           onChange={updateImageDisplay}
           ref={(e) => {

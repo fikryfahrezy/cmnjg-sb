@@ -1,4 +1,9 @@
-import type { ChangeEvent, ForwardedRef } from "react";
+import type {
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  ForwardedRef,
+  ChangeEvent,
+} from "react";
 import React, { forwardRef, useState, useRef, useEffect } from "react";
 import Label from "../label";
 import Button from "../button";
@@ -8,8 +13,8 @@ export const errNotImageFile = "Some File is Not Image File";
 
 const defaultFunc = () => {};
 
-type ImagePickerProps = import("react").DetailedHTMLProps<
-  import("react").InputHTMLAttributes<HTMLInputElement>,
+type ImagePickerProps = DetailedHTMLProps<
+  InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 > & {
   label?: string;
@@ -67,10 +72,7 @@ const ImagePicker = (
       "image/x-icon",
     ];
 
-    /**
-     * @type {File[]}
-     */
-    const fileObjs = [];
+    const fileObjs: File[] = [];
     let names = "";
 
     for (let i = 0; i < filesLen; i++) {
@@ -167,6 +169,7 @@ const ImagePicker = (
           <input
             {...restProps}
             type="file"
+            accept="image/*"
             ref={(e) => {
               inputFileRef.current = e;
               if (typeof ref === "function") {
