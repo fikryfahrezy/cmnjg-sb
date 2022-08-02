@@ -1,3 +1,15 @@
+# v0.1.22 (Tue Aug 02 2022)
+
+#### ⚠️ Pushed to `main`
+
+- fix ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.21 (Wed Jul 27 2022)
 
 #### ⚠️ Pushed to `main`
