@@ -1,10 +1,5 @@
 import type { ChangeEvent, ForwardedRef } from "react";
-import React, {
-  forwardRef,
-  useState,
-  useRef,
-  useEffect,
-} from "react";
+import React, { forwardRef, useState, useRef, useEffect } from "react";
 import Button from "../button";
 import { RiFileEditLine, RiCloseLine } from "react-icons/ri";
 import styles from "./Styles.module.css";
@@ -17,6 +12,7 @@ type AvatarPickerProps = JSX.IntrinsicElements["input"] & {
   defaultSrc: string;
   text: string;
   onErr?: (message: string) => void;
+  onRemove?: () => void;
 };
 
 const AvatarPicker = (
@@ -26,13 +22,13 @@ const AvatarPicker = (
     onChange,
     style,
     disabled,
-    value,
     src = "",
     text = "",
     onErr = defaultFunc,
+    onRemove = defaultFunc,
     ...restProps
   }: AvatarPickerProps,
-  ref: ForwardedRef<HTMLInputElement>,
+  ref: ForwardedRef<HTMLInputElement>
 ) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [imgUrl, setImgUrl] = useState(src);
@@ -98,12 +94,6 @@ const AvatarPicker = (
     return () => URL.revokeObjectURL(objectUrl);
   }, [selectedFile, src]);
 
-  useEffect(() => {
-    if (value === "") {
-      setImgUrl("");
-    }
-  }, [value]);
-
   return (
     <div
       style={style}
@@ -114,6 +104,7 @@ const AvatarPicker = (
           {...restProps}
           type="file"
           accept="image/*"
+          multiple={false}
           disabled={disabled}
           onChange={updateImageDisplay}
           ref={(e) => {
@@ -126,12 +117,15 @@ const AvatarPicker = (
           onClick={(e) => (e.currentTarget.value = "")}
         />
       </span>
-      {!disabled && imgUrl !== "" && value !== "" ? (
+      {!disabled && imgUrl !== "" ? (
         <Button
           type="button"
           leftIcon={<RiCloseLine />}
           className={`${styles.editBtn} ${styles.active}`}
-          onClick={() => setImgUrl("")}
+          onClick={() => {
+            setImgUrl("");
+            onRemove();
+          }}
         >
           <span className={styles.btnText}>{text}</span>
         </Button>
@@ -142,7 +136,12 @@ const AvatarPicker = (
           className={`${styles.editBtn} ${
             disabled ? styles.editBtnDisabled : ""
           }`}
-          onClick={() => inputFileRef.current?.click()}
+          onClick={() => {
+            if (inputFileRef.current !== null) {
+              inputFileRef.current.click();
+              inputFileRef.current.value = "";
+            }
+          }}
         >
           <span className={styles.btnText}>{text}</span>
         </Button>

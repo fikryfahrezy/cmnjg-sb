@@ -8,7 +8,7 @@
 import rollupTypescript from "@rollup/plugin-typescript";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
-import postcss from "rollup-plugin-postcss";
+import styles from "rollup-plugin-styles";
 import svgr from "@svgr/rollup";
 import autoprefixer from "autoprefixer";
 import image from "@rollup/plugin-image";
@@ -19,11 +19,15 @@ const globPlugins = [
     babelHelpers: "bundled",
     exclude: "node_modules/**",
   }),
-  postcss({
+  styles({
     plugins: [autoprefixer()],
     sourceMap: false,
     modules: true,
-    minimize: true,
+	minimize: true,
+    mode: [
+      "inject",
+      { treeshakeable: true },
+    ],
   }),
   image(),
   terser(),

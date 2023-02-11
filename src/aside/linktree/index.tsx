@@ -1,14 +1,15 @@
-import type { HTMLAttributes, Key } from "react";
+import type { Key } from "react";
 import React, { cloneElement, useState, useEffect } from "react";
 import styles from "./Styles.module.css";
 
-export type LinkTreeProps = HTMLAttributes<HTMLElement> & {
+export type LinkTreeProps = {
   key?: Key;
   element?: JSX.Element;
   childrens?: LinkTreeProps[];
   isActive?: boolean;
   isLink?: boolean;
   isRoot?: boolean;
+  className?: string
 };
 
 const LinkNode = ({
