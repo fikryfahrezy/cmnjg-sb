@@ -1,3 +1,16 @@
+# v0.1.24 (Sat Feb 11 2023)
+
+#### ⚠️ Pushed to `main`
+
+- disable commit to chromaui for a while (ffahrezi69@gmailcom)
+- change bundling config (ffahrezi69@gmailcom)
+
+#### Authors: 1
+
+- Fikry Fahrezy (ffahrezi69@gmailcom)
+
+---
+
 # v0.1.22 (Sat Feb 11 2023)
 
 #### ⚠️ Pushed to `main`
