@@ -33,13 +33,13 @@ jobs:
       # - name: Test
       #   run: npm test
 
-        #👇 Adds Chromatic as a step in the workflow
-      - uses: chromaui/action@v1
-        # Options required for Chromatic's GitHub Action
-        with:
-          #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-          token: ${{ secrets.GH_TOKEN }}
+      #👇 Adds Chromatic as a step in the workflow
+      # - uses: chromaui/action@v1
+      #   # Options required for Chromatic's GitHub Action
+      #   with:
+      #     #👇 Chromatic projectToken, see https://storybook.js.org/tutorials/design-systems-for-developers/react/en/review/ to obtain it
+      #     projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+      #     token: ${{ secrets.GH_TOKEN }}
 
   release:
     needs: test
