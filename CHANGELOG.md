@@ -1,3 +1,20 @@
+# v0.1.22 (Sat Feb 11 2023)
+
+#### ⚠️ Pushed to `main`
+
+- change to release workflows from npm to pnpm (ffahrezi69@gmailcom)
+- update node verion in workflows (ffahrezi69@gmailcom)
+- try using npm in ci due to unknown reason in pnpm (ffahrezi69@gmailcom)
+- comment test in workflows for temporary (ffahrezi69@gmailcom)
+- move to pnpm and change bundling config (ffahrezi69@gmailcom)
+- fix (ffahrezi69@gmailcom)
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.22 (Tue Aug 02 2022)
 
 #### ⚠️ Pushed to `main`
