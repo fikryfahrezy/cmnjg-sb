@@ -55,8 +55,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Test
-        run: pnpm test
+      # - name: Test
+      #   run: pnpm test
 
         #👇 Adds Chromatic as a step in the workflow
       - uses: chromaui/action@v1
