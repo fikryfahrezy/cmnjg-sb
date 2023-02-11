@@ -21,10 +21,9 @@ const globPlugins = [
   }),
   postcss({
     plugins: [autoprefixer()],
-    sourceMap: true,
+    sourceMap: false,
     modules: true,
     minimize: true,
-    extract: true,
   }),
   image(),
   terser(),
