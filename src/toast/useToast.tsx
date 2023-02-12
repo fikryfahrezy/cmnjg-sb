@@ -24,7 +24,7 @@ export type UseToastReturn = {
   props: ToastProps;
 };
 
-export const useToast: () => UseToastReturn = () => {
+const useToast: () => UseToastReturn = () => {
   const id = useRef(0);
   const tempToasts = useRef<ToastState[]>([]);
   const [state, setState] = useState<ToastProps>({

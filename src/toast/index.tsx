@@ -39,5 +39,3 @@ const Toast = ({ isOpen, toasts }: UseToastReturn["props"]) => {
 };
 
 export default Toast;
-
-export * from "./useToast";
