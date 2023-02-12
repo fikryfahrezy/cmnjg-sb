@@ -1,3 +1,15 @@
+# v0.1.25 (Sun Feb 12 2023)
+
+#### ⚠️ Pushed to `main`
+
+- change named export to default ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.24 (Sat Feb 11 2023)
 
 #### ⚠️ Pushed to `main`
