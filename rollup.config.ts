@@ -14,8 +14,6 @@ import autoprefixer from "autoprefixer";
 import image from "@rollup/plugin-image";
 import pkg from "./package.json";
 
-// test author config 
-
 const globPlugins = [
   babel({
     babelHelpers: "bundled",
