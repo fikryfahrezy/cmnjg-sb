@@ -1,3 +1,16 @@
+# v0.1.26 (Sat Mar 25 2023)
+
+#### ⚠️ Pushed to `main`
+
+- update github workflows to watch rollup config ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- update css inject config ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.25 (Sun Feb 12 2023)
 
 #### ⚠️ Pushed to `main`
