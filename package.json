@@ -1,7 +1,7 @@
 {
   "name": "cmnjg-sb",
   "author": "fikryfahrezy",
-  "version": "0.1.25",
+  "version": "0.1.26",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "license": "MIT",
   "source": "src/index.tsx",
