@@ -26,7 +26,7 @@ const globPlugins = [
 	minimize: true,
     mode: [
       "inject",
-      { treeshakeable: true },
+      { treeshakeable: true, prepend: true },
     ],
   }),
   image(),
