@@ -23,10 +23,15 @@ const globPlugins = [
     plugins: [autoprefixer()],
     sourceMap: false,
     modules: true,
-	minimize: true,
+    minimize: true,
     mode: [
       "inject",
-      { treeshakeable: true, prepend: true },
+      {
+        prepend: true,
+        container: "head",
+        singleTag: true,
+        attributes: { id: "cmnjg-sb" },
+      },
     ],
   }),
   image(),
