@@ -1,3 +1,15 @@
+# v0.1.27 (Sun Mar 26 2023)
+
+#### ⚠️ Pushed to `main`
+
+- update rollup config ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.26 (Sat Mar 25 2023)
 
 #### ⚠️ Pushed to `main`
