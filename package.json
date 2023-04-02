@@ -47,33 +47,34 @@
     "react-dom": "^18.0.0"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12",
-    "react-icons": "^4.4.0"
+    "cheerio": "1.0.0-rc.12",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
-    "@chakra-ui/system": "^2.0.0",
-    "@emotion/react": "^11.0.0",
-    "@emotion/styled": "^11.0.0",
+    "@chakra-ui/system": "^2.5.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-typescript": "^8.3.3",
+    "@rollup/plugin-typescript": "^8.5.0",
     "@svgr/rollup": "6.2.1",
-    "@types/node": "^18.0.0",
-    "@types/react": "^18.0.14",
-    "@types/react-dom": "^18.0.5",
-    "auto": "^10.37.1",
-    "autoprefixer": "^10.4.7",
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "auto": "^10.43.0",
+    "autoprefixer": "^10.4.14",
     "cross-env": "^7.0.3",
-    "prettier": "^2.7.1",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "import-cwd": "^3.0.0",
+    "prettier": "^2.8.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "^5.0.1",
-    "rimraf": "^4.1.2",
+    "rimraf": "^4.4.1",
     "rollup": "2.67.2",
-    "rollup-plugin-styles": "^4.0.0",
     "rollup-plugin-terser": "7.0.2",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4",
-    "unimported": "^1.21.0"
+    "rollup-pluginutils": "^2.8.2",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5",
+    "unimported": "^1.26.0"
   }
 }

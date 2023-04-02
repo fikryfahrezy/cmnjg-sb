@@ -8,7 +8,7 @@
 import rollupTypescript from "@rollup/plugin-typescript";
 import babel from "@rollup/plugin-babel";
 import { terser } from "rollup-plugin-terser";
-import styles from "rollup-plugin-styles";
+import postcss from "rollup-plugin-postcss";
 import svgr from "@svgr/rollup";
 import autoprefixer from "autoprefixer";
 import image from "@rollup/plugin-image";
@@ -19,20 +19,11 @@ const globPlugins = [
     babelHelpers: "bundled",
     exclude: "node_modules/**",
   }),
-  styles({
+  postcss({
     plugins: [autoprefixer()],
     sourceMap: false,
     modules: true,
     minimize: true,
-    mode: [
-      "inject",
-      {
-        prepend: true,
-        container: "head",
-        singleTag: true,
-        attributes: { id: "cmnjg-sb" },
-      },
-    ],
   }),
   image(),
   terser(),
@@ -60,7 +51,10 @@ export default [
     },
     external: externals,
     plugins: [
-      rollupTypescript({ tsconfig: "./tsconfig-es.json" }),
+      rollupTypescript({
+        declarationDir: "dist/es",
+        emitDeclarationOnly: true,
+      }),
       ...globPlugins,
     ],
   },
@@ -72,6 +66,9 @@ export default [
       ...output,
     },
     external: externals,
-    plugins: [rollupTypescript(), ...globPlugins],
+    plugins: [
+      rollupTypescript({ declarationDir: "dist", emitDeclarationOnly: false }),
+      ...globPlugins,
+    ],
   },
 ];
