@@ -65,5 +65,6 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          pnpm install
+          pnpm install --no-frozen-lockfile
+          git restore pnpm-lock.yaml
           pnpm release $GIT_EMAIL
