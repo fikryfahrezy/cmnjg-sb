@@ -1,7 +1,7 @@
 import type { ImageOut } from "../types";
 import React from "react";
 import { RiCloseLine } from "react-icons/ri";
-import { UniversalPortal } from "~/lib/react-portal-universal";
+import { UniversalPortal } from "../../../lib/react-portal-universal";
 import IconButton from "../../iconbutton";
 import styles from "./Styles.module.css";
 
