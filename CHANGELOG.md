@@ -1,3 +1,15 @@
+# v0.1.33 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- feat: add commonjs bundle ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.32 (Mon Apr 10 2023)
 
 #### ⚠️ Pushed to `main`
