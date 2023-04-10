@@ -1,3 +1,17 @@
+# v0.1.29 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update github ci ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- chore: update lock file, package json, and github ci ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Merge branch 'main' of github.com:fikryfahrezy/cmnjg-sb ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.28 (Mon Apr 10 2023)
 
 #### ⚠️ Pushed to `main`
