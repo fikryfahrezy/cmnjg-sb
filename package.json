@@ -9,7 +9,6 @@
     "copycss": "node ./scripts/css-copy.mjs",
     "build": "npm run clean && npm run build:mjs",
     "build:mjs": "npm run copycss ./src ./dist && npm run ts:build:mjs",
-    "prepare": "npm run build",
     "prettier": "prettier --write .",
     "purgecss": "node ./scripts/css-purger.mjs",
     "release": "auto shipit --base-branch=main --email",

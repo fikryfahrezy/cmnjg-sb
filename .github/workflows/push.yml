@@ -66,4 +66,5 @@ jobs:
           GH_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
           pnpm install
+          pnpm build
           pnpm release $GIT_EMAIL
