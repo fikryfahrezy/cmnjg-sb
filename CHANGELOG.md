@@ -1,3 +1,17 @@
+# v0.1.28 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update github ci ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- chore: update lockfile ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- chore: use typescript for build ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.27 (Sun Mar 26 2023)
 
 #### ⚠️ Pushed to `main`
