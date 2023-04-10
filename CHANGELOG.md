@@ -1,3 +1,15 @@
+# v0.1.30 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- fix: link button type ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.29 (Mon Apr 10 2023)
 
 #### ⚠️ Pushed to `main`
