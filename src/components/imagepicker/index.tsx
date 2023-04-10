@@ -9,7 +9,7 @@ import Label from "../label";
 import Button from "../button";
 import styles from "./Styles.module.css";
 
-export const errNotImageFile = "Some File is Not Image File";
+const errNotImageFile = "Some File is Not Image File";
 
 const defaultFunc = () => {};
 
@@ -41,7 +41,7 @@ const ImagePicker = (
     onErr = defaultFunc,
     ...restProps
   }: ImagePickerProps,
-  ref: ForwardedRef<HTMLInputElement>
+  ref: ForwardedRef<HTMLInputElement>,
 ) => {
   const [filesName, setFilesName] = useState("");
   const [selectedFile, setSelectedFile] = useState<File | null>(null);

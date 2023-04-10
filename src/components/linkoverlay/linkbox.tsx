@@ -16,4 +16,4 @@ const LinkBox = ({
   );
 };
 
-export default LinkBox
+export default LinkBox;

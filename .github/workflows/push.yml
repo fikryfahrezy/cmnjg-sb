@@ -9,14 +9,12 @@ on:
     paths:
       - ".github/**"
       - "src/**"
-      - "rollup.config.ts"
   pull_request:
     branches:
       - main
     paths:
       - ".github/**"
       - "src/**"
-      - "rollup.config.ts"
 
 # what the action will do
 jobs:

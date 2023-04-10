@@ -1,3 +1,0 @@
-[submodule "packages/rollup-plugin-postcss"]
-	path = packages/rollup-plugin-postcss
-	url = git@github.com:fikryfahrezy/rollup-plugin-postcss.git

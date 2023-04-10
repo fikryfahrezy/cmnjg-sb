@@ -7,7 +7,7 @@ type LinkOverlayProps = ComponentProps<typeof chakra.a>;
 
 const LinkOverlayComp = (
   { children, className, ...restProps }: LinkOverlayProps,
-  ref: ForwardedRef<HTMLAnchorElement>
+  ref: ForwardedRef<HTMLAnchorElement>,
 ) => {
   return (
     <chakra.a

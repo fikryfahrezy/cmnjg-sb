@@ -5,7 +5,49 @@
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "license": "MIT",
   "scripts": {
-    "build": "pnpm -r --filter='./packages/*' run build",
-    "release": "pnpm -r --filter='./packages/components' run release"
-  }
+    "clean": "rimraf dist/*",
+    "copycss": "node ./scripts/css-copy.mjs",
+    "build": "npm run clean && npm run build:mjs",
+    "build:mjs": "npm run copycss ./src ./dist && npm run ts:build:mjs",
+    "prepare": "npm run build",
+    "prettier": "prettier --write .",
+    "purgecss": "node ./scripts/css-purger.mjs",
+    "release": "auto shipit --base-branch=main --email",
+    "ts:check": "tsc --noEmit",
+    "ts:build:mjs": "tsc --outDir dist --declaration true --module esnext",
+    "unimported": "unimported"
+  },
+  "source": "src/index.tsx",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@chakra-ui/system": "^2.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "cheerio": "1.0.0-rc.12",
+    "react-icons": "^4.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "auto": "^10.43.0",
+    "prettier": "^2.8.7",
+    "react-scripts": "^5.0.1",
+    "rimraf": "^4.4.1",
+    "typescript": "^4.9.5",
+    "unimported": "^1.26.0"
+  },
+  "sideEffects": [
+    "**/*.css",
+	"./dist/index.js"
+  ]
 }
