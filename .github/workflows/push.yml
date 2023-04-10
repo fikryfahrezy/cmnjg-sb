@@ -17,17 +17,12 @@ jobs:
     # The list of steps that the action will go through
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-
-      - name: Set node
-        uses: actions/setup-node@v3
+      - uses: pnpm/action-setup@v2
         with:
-          node-version: 18.x
-          cache: pnpm
+          run_install: |
+            - recursive: true
+              args: [--frozen-lockfile, --strict-peer-dependencies]
 
       - name: Create Release
         env:
@@ -35,6 +30,5 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GH_EMAIL: ${{ secrets.GIT_EMAIL }}
         run: |
-          pnpm install
           pnpm build
           pnpm release $GIT_EMAIL
