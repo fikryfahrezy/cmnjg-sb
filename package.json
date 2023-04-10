@@ -1,7 +1,7 @@
 {
   "name": "cmnjg-sb",
   "author": "fikryfahrezy",
-  "version": "0.1.27",
+  "version": "0.1.28",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "license": "MIT",
   "scripts": {
@@ -48,6 +48,6 @@
   },
   "sideEffects": [
     "**/*.css",
-	"./dist/index.js"
+    "./dist/index.js"
   ]
 }
