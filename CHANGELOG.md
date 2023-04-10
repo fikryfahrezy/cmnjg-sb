@@ -1,3 +1,16 @@
+# v0.1.31 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update github ci ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- fix: update import ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.30 (Mon Apr 10 2023)
 
 #### ⚠️ Pushed to `main`
