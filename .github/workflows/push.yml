@@ -9,12 +9,16 @@ on:
     paths:
       - ".github/**"
       - "src/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
   pull_request:
     branches:
       - main
     paths:
       - ".github/**"
       - "src/**"
+      - "package.json"
+      - "pnpm-lock.yaml"
 
 # what the action will do
 jobs:
