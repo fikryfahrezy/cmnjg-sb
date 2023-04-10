@@ -1,3 +1,15 @@
+# v0.1.35 (Mon Apr 10 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: move components to components folder ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.34 (Mon Apr 10 2023)
 
 #### ⚠️ Pushed to `main`
