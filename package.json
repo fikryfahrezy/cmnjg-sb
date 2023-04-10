@@ -49,6 +49,7 @@
     "unimported": "^1.26.0"
   },
   "sideEffects": [
-    "**/*.css"
+    "**/*.css",
+    "./dist/es/index.js"
   ]
 }

@@ -1,7 +1,7 @@
 import type { UseToastReturn } from "./useToast";
 import React from "react";
 import { RiCloseLine } from "react-icons/ri";
-import { UniversalPortal } from "../lib/react-portal-universal";
+import { UniversalPortal } from "../../lib/react-portal-universal";
 import Alert from "../alert";
 import IconButton from "../iconbutton";
 
