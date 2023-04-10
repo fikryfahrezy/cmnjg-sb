@@ -4,7 +4,7 @@ import { chakra } from "@chakra-ui/system";
 import styles from "./Styles.module.css";
 
 type LinkButtonProps = ComponentProps<typeof chakra.a> & {
-  colorScheme: "red" | "green";
+  colorScheme?: "red" | "green";
   leftIcon?: JSX.Element;
   rightIcon?: JSX.Element;
 };
