@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copycss": "node ./scripts/css-copy.mjs",
-    "build": "npm run clean && npm run build:mjs && npm run build:cjs",
+    "build": "npm run clean && npm run build:mjs",
     "build:cjs": "npm run copycss ./src ./dist/cjs && npm run ts:build:cjs",
     "build:mjs": "npm run copycss ./src ./dist/es && npm run ts:build:mjs",
     "prettier": "prettier --write .",
@@ -18,12 +18,6 @@
     "ts:build:cjs": "tsc --outDir dist/cjs --declaration true --module commonjs",
     "ts:build:mjs": "tsc --outDir dist/es --declaration true --module esnext",
     "unimported": "unimported"
-  },
-  "exports": {
-    ".": {
-      "require": "./dist/cjs/index.js",
-      "import": "./dist/es/index.js"
-    }
   },
   "source": "src/index.tsx",
   "main": "dist/es/index.js",
