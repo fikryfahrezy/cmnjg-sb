@@ -8,18 +8,26 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copycss": "node ./scripts/css-copy.mjs",
-    "build": "npm run clean && npm run build:mjs",
-    "build:mjs": "npm run copycss ./src ./dist && npm run ts:build:mjs",
+    "build": "npm run clean && npm run build:mjs && npm run build:cjs",
+    "build:cjs": "npm run copycss ./src ./dist/cjs && npm run ts:build:cjs",
+    "build:mjs": "npm run copycss ./src ./dist/es && npm run ts:build:mjs",
     "prettier": "prettier --write .",
     "purgecss": "node ./scripts/css-purger.mjs",
     "release": "auto shipit --base-branch=main --email",
     "ts:check": "tsc --noEmit",
-    "ts:build:mjs": "tsc --outDir dist --declaration true --module esnext",
+    "ts:build:cjs": "tsc --outDir dist/cjs --declaration true --module commonjs",
+    "ts:build:mjs": "tsc --outDir dist/es --declaration true --module esnext",
     "unimported": "unimported"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/es/index.js"
+    }
+  },
   "source": "src/index.tsx",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/es/index.js",
+  "module": "dist/es/index.js",
   "files": [
     "dist"
   ],
