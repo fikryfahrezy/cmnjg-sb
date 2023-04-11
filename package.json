@@ -8,7 +8,7 @@
   "scripts": {
     "clean": "rimraf dist/*",
     "copycss": "node ./scripts/css-copy.mjs",
-    "build": "npm run clean && npm run build:mjs",
+    "build": "npm run clean && npm run build:mjs && npm run build:cjs",
     "build:cjs": "npm run copycss ./src ./dist/cjs && npm run ts:build:cjs",
     "build:mjs": "npm run copycss ./src ./dist/es && npm run ts:build:mjs",
     "prettier": "prettier --write .",
@@ -22,6 +22,12 @@
   "source": "src/index.tsx",
   "main": "dist/es/index.js",
   "module": "dist/es/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/es/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -50,6 +56,7 @@
   },
   "sideEffects": [
     "**/*.css",
-    "./dist/es/index.js"
+    "./dist/es/index.js",
+    "./dist/cjs/index.js"
   ]
 }
