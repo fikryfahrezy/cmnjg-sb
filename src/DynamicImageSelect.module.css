@@ -1,0 +1,145 @@
+.contentContainer {
+  position: relative;
+}
+
+.contentContainer,
+.contentContainer * {
+  box-sizing: border-box;
+}
+
+.errorMsg {
+  margin-top: 3px;
+  margin-bottom: 3px;
+  color: #ff7474;
+}
+
+.selectContainer {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1ch;
+}
+
+@media screen and (max-width: 768px) {
+  .selectContainer {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .selectContainer {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.cardWrapper {
+  cursor: pointer;
+}
+
+.btn {
+  height: auto;
+  color: #dbe6ed;
+  background-color: transparent;
+  border: dashed;
+  aspect-ratio: 1;
+}
+
+.btn,
+.cardWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+}
+
+.input {
+  position: absolute;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.cardContent {
+  position: relative;
+  width: 100%;
+  max-width: 250px;
+  min-height: 250px;
+  cursor: pointer;
+  aspect-ratio: 1;
+}
+
+.cardContent:hover {
+  filter: brightness(70%);
+}
+
+.bannerImg {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+@media screen and (max-width: 500px) {
+  .modal {
+    align-items: flex-end;
+  }
+}
+
+.modalBody {
+  width: 100%;
+  max-height: 100%;
+  max-width: 800px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: auto;
+  box-sizing: border-box;
+}
+
+.bannerContainer {
+  position: relative;
+  display: block;
+  height: 50vh;
+  margin: 0 auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.bannerImg {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.bannerDescription {
+  margin: 0;
+  margin-bottom: 15px;
+  word-break: break-all;
+}
+
+.buttonContainer {
+  display: flex;
+  width: fit-content;
+  margin-left: auto;
+  gap: 1ch;
+}
