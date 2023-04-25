@@ -1,3 +1,16 @@
+# v0.1.37 (Tue Apr 25 2023)
+
+#### ⚠️ Pushed to `main`
+
+- feat: add `exports` property in package.json ([@fikryfahrezy](https://github.com/fikryfahrezy))
+- Merge branch 'main' of github.com:fikryfahrezy/cmnjg-sb ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.36 (Tue Apr 11 2023)
 
 #### ⚠️ Pushed to `main`
