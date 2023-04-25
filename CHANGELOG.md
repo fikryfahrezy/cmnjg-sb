@@ -1,3 +1,15 @@
+# v0.1.38 (Tue Apr 25 2023)
+
+#### ⚠️ Pushed to `main`
+
+- chore: update `package.json` ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+#### Authors: 1
+
+- Fikry Fahrezy ([@fikryfahrezy](https://github.com/fikryfahrezy))
+
+---
+
 # v0.1.37 (Tue Apr 25 2023)
 
 #### ⚠️ Pushed to `main`
