@@ -19,7 +19,7 @@
     "ts:build:mjs": "tsc --outDir dist/es --declaration true --module esnext",
     "unimported": "unimported"
   },
-  "main": "dist/cjs/index.js",
+  "main": "dist/es/index.js",
   "module": "dist/es/index.js",
   "files": [
     "dist"
