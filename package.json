@@ -19,8 +19,14 @@
     "ts:build:mjs": "tsc --outDir dist/es --declaration true --module esnext",
     "unimported": "unimported"
   },
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/es/index.js"
+    }
+  },
   "source": "src/index.tsx",
-  "main": "dist/cjs/index.js",
+  "main": "dist/es/index.js",
   "module": "dist/es/index.js",
   "files": [
     "dist"
@@ -49,8 +55,6 @@
     "unimported": "^1.26.0"
   },
   "sideEffects": [
-    "**/*.css",
-    "./dist/es/index.js",
-    "./dist/cjs/index.js"
+    "**/*.css"
   ]
 }
