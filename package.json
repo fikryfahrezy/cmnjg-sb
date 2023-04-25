@@ -1,7 +1,7 @@
 {
   "name": "cmnjg-sb",
   "author": "fikryfahrezy",
-  "version": "0.1.36",
+  "version": "0.1.37",
   "packageManager": "pnpm@8.1.0",
   "repository": "https://github.com/fikryfahrezy/cmnjg-sb.git",
   "license": "MIT",
